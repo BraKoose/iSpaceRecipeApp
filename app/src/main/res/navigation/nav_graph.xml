@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allRecipeFragment">
+
+    <fragment
+        android:id="@+id/allRecipeFragment"
+        android:name="com.koose.ispacerecipeapp.view.fragments.AllRecipeFragment"
+        android:label="fragment_all_recipe"
+        tools:layout="@layout/fragment_all_recipe" >
+        <action
+            android:id="@+id/action_allRecipeFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_allRecipeFragment_to_randomDishFragment"
+            app:destination="@id/randomDishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.koose.ispacerecipeapp.view.fragments.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/randomDishFragment"
+        android:name="com.koose.ispacerecipeapp.view.fragments.RandomDishFragment"
+        android:label="fragment_random_dish"
+        tools:layout="@layout/fragment_random_dish" />
+</navigation>
