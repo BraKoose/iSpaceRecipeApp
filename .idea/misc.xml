@@ -8,6 +8,8 @@
         <entry key="app/src/main/res/layout/activity_add_dish.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1953125" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1375" />
+        <entry key="app/src/main/res/layout/fragment_all_recipe.xml" value="0.1375" />
+        <entry key="app/src/main/res/menu/all_recipe_option_menu.xml" value="0.1375" />
         <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.1953125" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1375" />
       </map>
