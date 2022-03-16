@@ -1,9 +1,11 @@
 package com.koose.ispacerecipeapp.view.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import com.koose.ispacerecipeapp.R
+import com.koose.ispacerecipeapp.view.activities.AddDishActivity
 
 
 class AllRecipeFragment : Fragment() {
@@ -22,7 +24,18 @@ class AllRecipeFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-
+        inflater.inflate(R.menu.all_recipe_option_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+
+        when(item.itemId){
+            R.id.action_add_dish ->{
+                startActivity(Intent(requireActivity(), AddDishActivity::class.java))
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
