@@ -10,12 +10,7 @@
         android:name="com.koose.ispacerecipeapp.view.fragments.AllRecipeFragment"
         android:label="fragment_all_recipe"
         tools:layout="@layout/fragment_all_recipe" >
-        <action
-            android:id="@+id/action_allRecipeFragment_to_favoriteFragment"
-            app:destination="@id/favoriteFragment" />
-        <action
-            android:id="@+id/action_allRecipeFragment_to_randomDishFragment"
-            app:destination="@id/randomDishFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"

@@ -2,4 +2,7 @@
     <string name="app_name">iSpaceRecipeApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_all_recipe">All Recipes</string>
+    <string name="menu_favorite">favorite</string>
+    <string name="menu_random_dish">random dish</string>
 </resources>

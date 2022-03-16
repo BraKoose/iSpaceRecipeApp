@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/ic_baseline_food_bank_24.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_add_dish.xml" value="0.103125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1953125" />
         <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.1953125" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1375" />
       </map>
     </option>
   </component>
