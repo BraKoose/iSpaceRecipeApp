@@ -11,6 +11,7 @@
         android:theme="@style/Theme.ISpaceRecipeApp">
         <activity
             android:name=".view.activities.AddDishActivity"
+            android:theme="@style/custom_style_action_bar"
             android:exported="false" />
         <activity
             android:name=".view.activities.SplashActivity"
