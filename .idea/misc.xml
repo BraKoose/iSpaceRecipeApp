@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/ic_add_a_dish.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_add_a_photo.xml" value="0.159" />
         <entry key="app/src/main/res/drawable/ic_add_dish.xml" value="0.1475" />
         <entry key="app/src/main/res/drawable/ic_baseline_food_bank_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1345" />
@@ -12,6 +13,7 @@
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1375" />
         <entry key="app/src/main/res/layout/fragment_all_recipe.xml" value="0.1375" />
         <entry key="app/src/main/res/layout/fragment_random_dish.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/pick_img_camera_gallery.xml" value="0.1796875" />
         <entry key="app/src/main/res/menu/all_recipe_option_menu.xml" value="0.1375" />
         <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.1953125" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1375" />

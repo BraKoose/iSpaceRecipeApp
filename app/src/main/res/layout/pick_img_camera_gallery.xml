@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:id="@+id/pict_img_camera"
+        android:padding="20dp"
+        android:src="@drawable/ic_baseline_camera_24"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:padding="20dp"
+        android:id="@+id/pick_img_gallery"
+        android:src="@drawable/ic_take_img_gallery"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
