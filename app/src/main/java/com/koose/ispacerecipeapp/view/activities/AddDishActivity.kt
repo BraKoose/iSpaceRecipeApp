@@ -67,16 +67,26 @@ class AddDishActivity : AppCompatActivity() {
                 Dexter.withContext(this)
                     .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                     .withListener(object : PermissionListener {
-                        override fun onPermissionGranted(response: PermissionGrantedResponse) { /* ... */
+                        override fun onPermissionGranted(response: PermissionGrantedResponse) {
+                            //Pick Image from Gallery Intent
+                            val intent = Intent()
+                            intent.type = "image/*"
+                            intent.action = Intent.ACTION_GET_CONTENT
+                            startActivityForResult(
+                                Intent.createChooser(intent, "Select Picture"),
+                                PICK_IMAGE
+                            )
                         }
 
-                        override fun onPermissionDenied(response: PermissionDeniedResponse) { /* ... */
+                        override fun onPermissionDenied(response: PermissionDeniedResponse) {
+
                         }
 
                         override fun onPermissionRationaleShouldBeShown(
                             permission: PermissionRequest,
                             token: PermissionToken
-                        ) { /* ... */
+                        ) {
+
                         }
                     }).check()
             }
@@ -94,5 +104,6 @@ class AddDishActivity : AppCompatActivity() {
 
     companion object{
         const val REQUEST_IMAGE_CAPTURE = 100
+        const val PICK_IMAGE = 200
     }
 }
