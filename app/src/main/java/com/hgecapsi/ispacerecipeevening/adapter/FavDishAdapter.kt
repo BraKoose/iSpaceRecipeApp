@@ -41,7 +41,13 @@ class FavDishAdapter(
         return dishes.size
     }
 
-
+    // TODO Step 8: Create a function that will have the updated list of dishes that we will bind it to the adapter class.
+    // START
+    fun dishesList(list: List<RecipeData>) {
+        dishes = list
+        notifyDataSetChanged()
+    }
+    // END
 
     class ViewHolder(view: ItemDishLayoutBinding):RecyclerView.ViewHolder(view.root){
         //holds The TextViews that will add each items to
