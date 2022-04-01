@@ -228,6 +228,18 @@ class AddDishActivity : AppCompatActivity(), View.OnClickListener {
                      //  ViewModel to Insert or Update
                      // START
 
+                     var dishID = 0
+                     var imageSource = Constants.DISH_IMAGE_SOURCE_LOCAL
+                     var favoriteDish = false
+
+                     mRecipeDetails?.let {
+                         if (it.id != 0) {
+                             dishID = it.id
+                             imageSource = it.imageSource
+                             favoriteDish = it.favoriteDish
+                         }
+                     }
+
 
 
                      val favDishDetails: RecipeData = RecipeData(
