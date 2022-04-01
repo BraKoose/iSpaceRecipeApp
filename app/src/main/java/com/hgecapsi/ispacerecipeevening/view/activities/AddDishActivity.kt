@@ -34,7 +34,7 @@ import com.hgecapsi.ispacerecipeevening.databinding.PickImgCameraGalleryBinding
 import com.hgecapsi.ispacerecipeevening.utils.FavDishApplication
 import com.hgecapsi.ispacerecipeevening.viewmodel.FavDishViewModel
 import com.hgecapsi.ispacerecipeevening.viewmodel.FavDishViewModelFactory
-import com.hgecapsi.recipeprjectispace.utils.Constants
+import com.hgecapsi.ispacerecipeevening.utils.Constants
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken

@@ -1,4 +1,4 @@
-package com.hgecapsi.recipeprjectispace.utils
+package com.hgecapsi.ispacerecipeevening.utils
 
 /**
  * This is used to define the constant values that we can use throughout the application.
