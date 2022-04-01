@@ -88,6 +88,30 @@ class AddDishActivity : AppCompatActivity(), View.OnClickListener {
         }
         // END
 
+        // TODO Step 7: Set the existing dish details to the view to edit.
+        // START
+        mRecipeDetails?.let {
+            if (it.id != 0) {
+                imagePath = it.image
+
+                // Load the dish image in the ImageView.
+                Glide.with(this@AddDishActivity)
+                    .load(imagePath)
+                    .centerCrop()
+                    .into(bindingActivityAddDish.ivDishImage)
+
+                bindingActivityAddDish.etTitle.setText(it.title)
+                bindingActivityAddDish.etType.setText(it.type)
+                bindingActivityAddDish.etCategory.setText(it.category)
+                bindingActivityAddDish.etIngredients.setText(it.ingredients)
+                bindingActivityAddDish.etCookingTime.setText(it.cookingTime)
+                bindingActivityAddDish.etDirectionToCook.setText(it.directionToCook)
+
+                bindingActivityAddDish.btnAddDish.text = resources.getString(R.string.lbl_update_dish)
+            }
+        }
+        // END
+
       bindingActivityAddDish.ivAddDishImage.setOnClickListener {
           openCameraGalleryDioalog()
       }

@@ -35,5 +35,6 @@
     <string name="label_no_dishes_added_yet">No Dishes Added Yet</string>
     <string name="action_edit_dish">Edit Dish</string>
     <string name="action_delete_dish">Delete Dish</string>
+    <string name="lbl_update_dish">Update Dish</string>
 
 </resources>
