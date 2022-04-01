@@ -1,6 +1,7 @@
 package com.hgecapsi.ispacerecipeevening.adapter
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.PopupMenu
@@ -11,6 +12,7 @@ import com.hgecapsi.ispacerecipeevening.R
 import com.hgecapsi.ispacerecipeevening.data.RecipeData
 import com.hgecapsi.ispacerecipeevening.databinding.ItemDishLayoutBinding
 import com.hgecapsi.ispacerecipeevening.utils.Constants
+import com.hgecapsi.ispacerecipeevening.view.activities.AddDishActivity
 import com.hgecapsi.ispacerecipeevening.view.fragments.AllRecipeFragment
 
 class FavDishAdapter(
@@ -54,7 +56,7 @@ class FavDishAdapter(
                     // TODO Step 2: Replace the Log with below code to pass the dish details to AddUpdateDishActivity.
                     // START
                     val intent =
-                        Intent(fragment.requireActivity(), AddRecipeActivity::class.java)
+                        Intent(fragment.requireActivity(), AddDishActivity::class.java)
                     intent.putExtra(Constants.EXTRA_DISH_DETAILS, dish)
                     fragment.requireActivity().startActivity(intent)
                     // END
@@ -64,7 +66,7 @@ class FavDishAdapter(
                     // TODO Step 6: Remove the log and call the function that we have created to delete.
                     // START
                     if (fragment is AllRecipeFragment) {
-                        fragment.deleteStudent(dish)
+                       // fragment.deleteStudent(dish)
                     }
                     // END
 
