@@ -5,13 +5,13 @@ import com.hgecapsi.ispacerecipeevening.data.RecipeData
 import com.hgecapsi.ispacerecipeevening.database.RecipeRepository
 import kotlinx.coroutines.launch
 
-class  FavDishViewModel(private val repository: RecipeRepository):ViewModel() {
+class  FavDishViewModel(private val recipeRepository: RecipeRepository):ViewModel() {
     /**
      * Launching a new coroutine to insert the data in a non-blocking way.
      */
     fun insert(recipeData: RecipeData) = viewModelScope.launch {
         // Call the repository function and pass the details.
-        repository.insertFavDishData(recipeData)
+        recipeRepository.insertFavDishData(recipeData)
     }
 
     // TODO Step 3: Get all the dishes list from the database in the ViewModel to pass it to the UI.
@@ -23,10 +23,10 @@ class  FavDishViewModel(private val repository: RecipeRepository):ViewModel() {
      */
 
     fun update(recipeData: RecipeData) = viewModelScope.launch {
-        repository.updateFavDishData(recipeData)
+        recipeRepository.updateFavDishData(recipeData)
     }
 
-    val allDishesList: LiveData<List<RecipeData>> = repository.allDishesList.asLiveData()
+    val allDishesList: LiveData<List<RecipeData>> = recipeRepository.allDishesList.asLiveData()
     // END
 
 }
