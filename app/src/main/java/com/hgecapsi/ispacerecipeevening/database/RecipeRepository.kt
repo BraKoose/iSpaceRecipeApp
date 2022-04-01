@@ -25,9 +25,14 @@ class RecipeRepository(private val recipeDao: RecipeDao) {
         recipeDao.insertFavDishDetails(recipeData)
     }
 
-
-    // TODO Step 2: Create a variable for the dishes list to access it from ViewModel.
+    // TODO Step 2: Create a suspend function on workerThread to Update the details that can be called from the ViewModel class.
     // START
+    @WorkerThread
+    suspend fun updateFavDishData(recipeData: RecipeData) {
+        recipeDao.updateFavDishDetails(recipeData)
+    }
+    // END
+
     // Room executes all queries on a separate thread.
     // Observed Flow will notify the observer when the data has changed.
     val allDishesList: Flow<List<RecipeData>> = recipeDao.getAllDishesList()
