@@ -22,6 +22,7 @@
         <entry key="app/src/main/res/layout/fragment_details.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/layout/item_custom_list_layout.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/layout/item_dish_layout.xml" value="0.22" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu_adapter.xml" value="0.1796875" />
       </map>
     </option>
