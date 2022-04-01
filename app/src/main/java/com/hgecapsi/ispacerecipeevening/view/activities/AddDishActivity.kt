@@ -58,10 +58,7 @@ class AddDishActivity : AppCompatActivity(), View.OnClickListener {
       private lateinit var mCustomListDialog:Dialog
       private lateinit var bindingDialogCustom: DialogCustomListBinding
 
-    // TODO Step 3: Create a global variable for dish details that we will receive via intent.
-    // START
-    private var mRecipeDetails: RecipeData? = null
-    // END
+
 
     /**
      * To create the ViewModel we used the viewModels delegate, passing in an instance of our FavDishViewModelFactory.
@@ -70,6 +67,11 @@ class AddDishActivity : AppCompatActivity(), View.OnClickListener {
     private val mFavDishViewModel: FavDishViewModel by viewModels {
         FavDishViewModelFactory((application as FavDishApplication).repository)
     }
+
+    // TODO Step 3: Create a global variable for dish details that we will receive via intent.
+    // START
+    private var mRecipeDetails: RecipeData? = null
+    // END
 
 
     // A global variable for storing image path.
