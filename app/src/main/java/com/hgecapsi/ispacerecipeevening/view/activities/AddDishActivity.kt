@@ -244,50 +244,40 @@ class AddDishActivity : AppCompatActivity(), View.OnClickListener {
 
                      val favDishDetails: RecipeData = RecipeData(
                          imagePath,
-                         "",
+                         imageSource,
                          title,
                          type,
                          category,
                          ingredients,
                          cookingTimeInMinutes,
                          cookingDirection,
+                         favoriteDish,
+                         dishID,
                      )
+                     if(dishID == 0) {
+                         mFavDishViewModel.insert(favDishDetails)
 
-                     mFavDishViewModel.insert(favDishDetails)
-
-
-                     Toast.makeText(
-                            this@AddDishActivity,
-                             "You successfully inserted favorite dish details.",
+                         Toast.makeText(
+                             this@AddDishActivity,
+                             "You successfully added your  dish to the database.",
                              Toast.LENGTH_SHORT
                          ).show()
 
-//                     if(dishID == 0) {
-//                         mFavDishViewModel.insert(favDishDetails)
-//
-//                         Toast.makeText(
-//                             this@AddRecipeActivity,
-//                             "You successfully added your favorite dish details.",
-//                             Toast.LENGTH_SHORT
-//                         ).show()
-//
-//                         // You even print the log if Toast is not displayed on emulator
-//                         Log.e("Insertion", "Success")
-//                     }else{
-//                         mFavDishViewModel.update(favDishDetails)
-//
-//                         Toast.makeText(
-//                             this@AddRecipeActivity,
-//                             "You successfully updated your favorite dish details.",
-//                             Toast.LENGTH_SHORT
-//                         ).show()
-//
-//                         // You even print the log if Toast is not displayed on emulator
-//                         Log.e("Updating", "Success")
-//                     }
+                         // You even print the log if Toast is not displayed on emulator
+                         Log.e("Insertion", "Success")
+                     }else{
+                         mFavDishViewModel.update(favDishDetails)
+
+                         Toast.makeText(
+                             this@AddDishActivity,
+                             "You successfully updated your  dish details.",
+                             Toast.LENGTH_SHORT
+                         ).show()
+
+                         // You even print the log if Toast is not displayed on emulator
+                         Log.e("Updating", "Success")
+                     }
                      // END
-
-
                      finish()
                  }
              }
