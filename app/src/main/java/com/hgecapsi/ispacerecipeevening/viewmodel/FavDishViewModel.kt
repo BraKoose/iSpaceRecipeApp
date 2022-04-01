@@ -5,7 +5,7 @@ import com.hgecapsi.ispacerecipeevening.data.RecipeData
 import com.hgecapsi.ispacerecipeevening.database.RecipeRepository
 import kotlinx.coroutines.launch
 
-class FavDishViewModel(private val repository: RecipeRepository):ViewModel() {
+class  FavDishViewModel(private val repository: RecipeRepository):ViewModel() {
     /**
      * Launching a new coroutine to insert the data in a non-blocking way.
      */
@@ -21,6 +21,11 @@ class FavDishViewModel(private val repository: RecipeRepository):ViewModel() {
      * update the UI when the data actually changes.
      * Repository is completely separated from the UI through the ViewModel.
      */
+
+    fun update(recipeData: RecipeData) = viewModelScope.launch {
+        repository.updateFavDishData(recipeData)
+    }
+
     val allDishesList: LiveData<List<RecipeData>> = repository.allDishesList.asLiveData()
     // END
 

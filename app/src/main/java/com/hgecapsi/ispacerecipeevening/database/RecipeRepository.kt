@@ -1,6 +1,7 @@
 package com.hgecapsi.ispacerecipeevening.database
 
 import androidx.annotation.WorkerThread
+import androidx.room.Update
 import com.hgecapsi.ispacerecipeevening.data.RecipeData
 import kotlinx.coroutines.flow.Flow
 
@@ -31,6 +32,7 @@ class RecipeRepository(private val recipeDao: RecipeDao) {
     suspend fun updateFavDishData(recipeData: RecipeData) {
         recipeDao.updateFavDishDetails(recipeData)
     }
+    // END
     // END
 
     // Room executes all queries on a separate thread.
