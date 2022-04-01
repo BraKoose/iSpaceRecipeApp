@@ -3,6 +3,7 @@ package com.hgecapsi.ispacerecipeevening.database
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import com.hgecapsi.ispacerecipeevening.data.RecipeData
 import kotlinx.coroutines.flow.Flow
 
@@ -28,6 +29,18 @@ interface RecipeDao {
 
     // TODO Step 1: Create a function to get the list of dishes from database using @Query.
     // START
+
+    // TODO Step 1: Create a suspend function to update the dish details.
+    // START
+    /**
+     * A function to update favorite dish details to the local database using Room.
+     *
+     * @param favDish - Here we will pass the entity class that we have created with updated details along with "id".
+     */
+    @Update
+    suspend fun updateFavDishDetails(recipeData: RecipeData)
+    // END
+
     /**
      * When data changes, you usually want to take some action,
      * such as displaying the updated data in the UI.
