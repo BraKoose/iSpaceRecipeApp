@@ -36,7 +36,7 @@ class RandomApiDish  {
         .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
         .build() // Create the Retrofit instance using the configured values.
         // Create an implementation of the API endpoints defined by the service interface in our case it is RandomDishAPI.
-        .create(RandomApiDish::class.java)
+        .create(RetrofitInstance::class.java)
     // END
 
     // TODO Step 4: Create a function that will initiate the API call and returns the API response.
