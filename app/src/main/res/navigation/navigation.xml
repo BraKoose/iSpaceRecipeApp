@@ -8,16 +8,16 @@
     <fragment
         android:id="@+id/allRecipeFragment"
         android:name="com.ispacegh.babuckman.ispacerecipeapp.views.fragments.AllRecipeFragment"
-        android:label="fragment_all_recipe"
+        android:label="All receipe"
         tools:layout="@layout/fragment_all_recipe" />
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.ispacegh.babuckman.ispacerecipeapp.views.fragments.FavoriteFragment"
-        android:label="fragment_favorite"
+        android:label="Favorite"
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/randomDishFragment"
         android:name="com.ispacegh.babuckman.ispacerecipeapp.views.fragments.RandomDishFragment"
-        android:label="fragment_random_dish"
+        android:label="Random Dish "
         tools:layout="@layout/fragment_random_dish" />
 </navigation>
