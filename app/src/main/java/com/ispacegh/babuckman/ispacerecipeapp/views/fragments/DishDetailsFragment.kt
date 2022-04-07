@@ -40,9 +40,11 @@ class DishDetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dish_details, container, false)
+        // TODO Step 8: Initialize the mBinding variable.
+        // START
+        mBinding = FragmentDishDetailsBinding.inflate(inflater, container, false)
+        return mBinding!!.root
+        // END
     }
-
 
 }
