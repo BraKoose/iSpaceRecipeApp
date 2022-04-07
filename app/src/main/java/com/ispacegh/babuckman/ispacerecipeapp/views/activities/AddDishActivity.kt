@@ -1,7 +1,6 @@
 package com.ispacegh.babuckman.ispacerecipeapp.views.activities
 
 import android.Manifest
-import android.app.Activity
 import android.app.Dialog
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -298,7 +297,12 @@ class AddDishActivity : AppCompatActivity(), View.OnClickListener {
         // Set the LayoutManager that this RecyclerView will use.
         bindingDialogCustom.rvList.layoutManager = LinearLayoutManager(this@AddDishActivity)
         // Adapter class is initialized and list is passed in the param.
-        val adapter = CustomListItemAdapter(this@AddDishActivity, dishTypes, selectedDishType)
+        val adapter = CustomListItemAdapter(
+            this@AddDishActivity,
+            dishTypes,
+            selectedDishType,
+            Constants.FILTER_SELECTION
+        )
         // adapter instance is set to the recyclerview to inflate the items.
         bindingDialogCustom.rvList.adapter = adapter
         //Start the dialog and display it on screen.

@@ -15,6 +15,7 @@ import com.ispacegh.babuckman.ispacerecipeapp.model.entities.RecipeData
 import com.ispacegh.babuckman.ispacerecipeapp.utils.Constants
 import com.ispacegh.babuckman.ispacerecipeapp.views.activities.AddDishActivity
 import com.ispacegh.babuckman.ispacerecipeapp.views.fragments.AllRecipeFragment
+import com.ispacegh.babuckman.ispacerecipeapp.views.fragments.FavoriteFragment
 
 class FavDishAdapter(private val fragment:Fragment): RecyclerView.Adapter<FavDishAdapter.ViewHolder>() {
 
@@ -35,6 +36,29 @@ class FavDishAdapter(private val fragment:Fragment): RecyclerView.Adapter<FavDis
             .into(holder.ivDishImage)
 
         holder.tvTitle.text = dish.title
+
+
+
+        // TODO Step 9: Assign the click event to the itemview and perform the required action.
+        // START
+        holder.itemView.setOnClickListener {
+            if (fragment is AllRecipeFragment) {
+                fragment.dishDetails(dish)
+            }else if (fragment is FavoriteFragment) {
+                fragment.dishDetails(dish)
+            }
+
+        }
+        // END
+        // TODO Step 7: We want the menu icon should be visible only in the AllDishesFragment not in the FavoriteDishesFragment so add the below to achieve it.
+        // START
+        if (fragment is AllRecipeFragment) {
+            holder.ibMore.visibility = View.VISIBLE
+        } else if (fragment is FavoriteFragment) {
+            holder.ibMore.visibility = View.GONE
+        }
+        // END
+
 
         holder.ibMore.setOnClickListener {
             val popup = PopupMenu(fragment.context, holder.ibMore)

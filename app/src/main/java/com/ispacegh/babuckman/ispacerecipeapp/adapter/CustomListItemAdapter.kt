@@ -6,12 +6,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ispacegh.babuckman.ispacerecipeapp.databinding.ItemCustomListLayoutBinding
 import com.ispacegh.babuckman.ispacerecipeapp.views.activities.AddDishActivity
+import com.ispacegh.babuckman.ispacerecipeapp.views.fragments.AllRecipeFragment
+import java.util.ArrayList
+import kotlin.collections.ArrayList
 
 class CustomListItemAdapter(
     private val activity: Activity,
-    private val listItems: List<String>,
-    private val selection: String
-    ) :
+    private val listItems: AllRecipeFragment,
+    private val selection: ArrayList<String>,
+    filterSelection: String
+) :
         RecyclerView.Adapter<CustomListItemAdapter.ViewHolder>() {
 
         /**

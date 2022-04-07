@@ -1,20 +1,23 @@
 package com.ispacegh.babuckman.ispacerecipeapp.views.fragments
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ispacegh.babuckman.ispacerecipeapp.MainActivity
 import com.ispacegh.babuckman.ispacerecipeapp.R
+import com.ispacegh.babuckman.ispacerecipeapp.adapter.CustomListItemAdapter
 import com.ispacegh.babuckman.ispacerecipeapp.adapter.FavDishAdapter
+import com.ispacegh.babuckman.ispacerecipeapp.databinding.DialogCustomListBinding
 import com.ispacegh.babuckman.ispacerecipeapp.databinding.FragmentAllRecipeBinding
 import com.ispacegh.babuckman.ispacerecipeapp.model.entities.RecipeData
+import com.ispacegh.babuckman.ispacerecipeapp.utils.Constants
 import com.ispacegh.babuckman.ispacerecipeapp.utils.FavDishApplication
 import com.ispacegh.babuckman.ispacerecipeapp.viewmodel.FavDishViewModel
 import com.ispacegh.babuckman.ispacerecipeapp.viewmodel.FavDishViewModelFactory
@@ -29,6 +32,12 @@ class AllRecipeFragment : Fragment() {
     private val mFavDishViewModel:FavDishViewModel by viewModels {
         FavDishViewModelFactory((requireActivity().application as FavDishApplication).repository)
     }
+
+
+    // TODO Step 3: Make the CustomItemsListDialog as global instead of local as below.
+    // START
+    private lateinit var mCustomListDialog: Dialog
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,26 +95,92 @@ class AllRecipeFragment : Fragment() {
 
     }
 
-    // TODO Step 2: Create a function to navigate to the Dish Details Fragment.
+    // TODO Step 8: Create a function to navigate to the Dish Details Fragment.
     // START
     /**
      * A function to navigate to the Dish Details Fragment.
-     *
-     * @param favDish
      */
-    fun dishDetails(recipeData: RecipeData) {
+    fun dishDetails(recipeData: RecipeData){
 
-        // TODO Step 4: Hide the BottomNavigationView while navigating to the DetailsFragment.
+        // TODO Step 9: Call the hideBottomNavigationView function when user wants to navigate to the DishDetailsFragment.
         // START
-        if (requireActivity() is MainActivity) {
+        if(requireActivity() is MainActivity){
             (activity as MainActivity?)!!.hideBottomNavigationView()
         }
         // END
 
-        findNavController()
-            .navigate(FavoriteFragmentDirections.actionFavoriteFragmentToDishDetailsFragment(recipeData))
+        findNavController().navigate(AllRecipeFragmentDirections
+            .actionAllRecipeFragmentToDishDetailsFragment(recipeData)
+
+        )
+//        findNavController().navigate(
+//            R.id.action_allRecipeFragment_to_dishDetailsFragment,null
+//        )
+
     }
     // END
+
+    // TODO Step 4: Create a function to show the filter items in the custom list dialog.
+    // START
+    /**
+     * A function to launch the custom dialog.
+     */
+    private fun filterDishesListDialog() {
+        mCustomListDialog = Dialog(requireActivity())
+
+        val binding: DialogCustomListBinding = DialogCustomListBinding.inflate(layoutInflater)
+
+        /*Set the screen content from a layout resource.
+        The resource will be inflated, adding all top-level views to the screen.*/
+        mCustomListDialog.setContentView(binding.root)
+
+        binding.tvTitle.text = resources.getString(R.string.title_select_item_to_filter)
+
+        val dishTypes = Constants.dishTypes()
+        // TODO Step 5: Add the 0 element to  get ALL items.
+        dishTypes.add(0, Constants.ALL_ITEMS)
+
+        // Set the LayoutManager that this RecyclerView will use.
+        binding.rvList.layoutManager = LinearLayoutManager(requireActivity())
+        // Adapter class is initialized and list is passed in the param.
+        val adapter = CustomListItemAdapter(
+            requireActivity(),
+            this,
+            dishTypes,
+            Constants.FILTER_SELECTION
+        )
+        // adapter instance is set to the recyclerview to inflate the items.
+        binding.rvList.adapter = adapter
+        //Start the dialog and display it on screen.
+        mCustomListDialog.show()
+    }
+    // END
+
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_all_dishes, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            // TODO Step 6: Assign the item click and show the filter list dialog.
+            // START
+            R.id.action_filter_dishes -> {
+                filterDishesListDialog()
+                return true
+            }
+            // END
+            R.id.action_add_dish -> {
+                startActivity(Intent(requireActivity(), AddDishActivity::class.java))
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 
 
 }

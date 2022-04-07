@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.ispacegh.babuckman.ispacerecipeapp.MainActivity
 
 import com.ispacegh.babuckman.ispacerecipeapp.adapter.FavDishAdapter
 import com.ispacegh.babuckman.ispacerecipeapp.databinding.FragmentFavoriteBinding
@@ -83,7 +84,43 @@ class FavoriteFragment : Fragment() {
 
     }
 
+    // TODO Step 2: Create a function to navigate to the Dish Details Fragment.
+    // START
+    /**
+     * A function to navigate to the Dish Details Fragment.
+     *
+     * @param favDish
+     */
+    fun dishDetails(recipeData: RecipeData) {
 
+        // TODO Step 4: Hide the BottomNavigationView while navigating to the DetailsFragment.
+        // START
+        if (requireActivity() is MainActivity) {
+            (activity as MainActivity?)!!.hideBottomNavigationView()
+        }
+        // END
+
+        findNavController()
+            .navigate(FavoriteFragmentDirections.actionFavoriteFragmentToDishDetailsFragment(recipeData))
+    }
+    // END
+
+    // TODO Step 5: Override the onResume function to show the BottomNavigationView when the fragment is completely loaded.
+    // START
+    override fun onResume() {
+        super.onResume()
+
+        if (requireActivity() is MainActivity) {
+            (activity as MainActivity?)!!.showBottomNavigationView()
+        }
+    }
+    // END
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mBinding = null
+    }
 
 
 }
