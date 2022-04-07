@@ -2,22 +2,41 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation"
+    android:id="@+id/nav_graph"
     app:startDestination="@id/allRecipeFragment">
 
     <fragment
         android:id="@+id/allRecipeFragment"
         android:name="com.ispacegh.babuckman.ispacerecipeapp.views.fragments.AllRecipeFragment"
-        android:label="All receipe"
-        tools:layout="@layout/fragment_all_recipe" />
+        android:label="All Recipes"
+        tools:layout="@layout/fragment_all_recipe" >
+        <action
+            android:id="@+id/action_allRecipeFragment_to_dishDetailsFragment"
+            app:destination="@id/dishDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.ispacegh.babuckman.ispacerecipeapp.views.fragments.FavoriteFragment"
-        android:label="Favorite"
-        tools:layout="@layout/fragment_favorite" />
+        android:label="Favorite Recipes"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_dishDetailsFragment"
+            app:destination="@id/dishDetailsFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/randomDishFragment"
+        android:id="@+id/randomRecipeFragment"
         android:name="com.ispacegh.babuckman.ispacerecipeapp.views.fragments.RandomDishFragment"
-        android:label="Random Dish "
-        tools:layout="@layout/fragment_random_dish" />
+        android:label="random Recipes"
+        tools:layout="@layout/fragment_random_recipe" />
+    <fragment
+        android:id="@+id/dishDetailsFragment"
+        android:name="com.ispacegh.babuckman.ispacerecipeapp.views.fragments.DishDetailsFragment"
+        android:label="fragment_dish_details"
+        tools:layout="@layout/fragment_dish_details" >
+
+        <argument
+            android:name="dishDetails"
+            app:argType="com.ispacegh.babuckman.ispacerecipeapp.model.entities.RecipeData"/>
+    </fragment>
 </navigation>
+

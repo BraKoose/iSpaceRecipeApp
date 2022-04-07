@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.ispacegh.babuckman.ispacerecipeapp.R
+
 import com.ispacegh.babuckman.ispacerecipeapp.api.RandomDish
 import com.ispacegh.babuckman.ispacerecipeapp.databinding.FragmentRandomDishBinding
 import com.ispacegh.babuckman.ispacerecipeapp.model.entities.RecipeData

@@ -18,8 +18,15 @@
         <entry key="app/src/main/res/drawable/ic_add_dish.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_all_recipe.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_more.xml" value="0.188" />
+        <entry key="app/src/main/res/layout/activity_add_dish.xml" value="0.15052083333333333" />
+        <entry key="app/src/main/res/layout/activity_intro.xml" value="0.15052083333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/dialog_custom_list.xml" value="0.15052083333333333" />
         <entry key="app/src/main/res/layout/fragment_all_recipe.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_details.xml" value="0.19427083333333334" />
+        <entry key="app/src/main/res/layout/fragment_dish_details.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_favorite.xml" value="0.16" />
+        <entry key="app/src/main/res/layout/fragment_random_recipe.xml" value="0.1953125" />
         <entry key="app/src/main/res/layout/item_custom_list_layout.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/layout/item_dish_layout.xml" value="0.22" />
         <entry key="app/src/main/res/layout/pick_img_from_camera_gallary.xml" value="0.22" />

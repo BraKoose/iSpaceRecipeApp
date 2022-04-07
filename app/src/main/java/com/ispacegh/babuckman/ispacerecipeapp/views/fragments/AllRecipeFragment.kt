@@ -7,11 +7,14 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ispacegh.babuckman.ispacerecipeapp.MainActivity
 import com.ispacegh.babuckman.ispacerecipeapp.R
 import com.ispacegh.babuckman.ispacerecipeapp.adapter.FavDishAdapter
 import com.ispacegh.babuckman.ispacerecipeapp.databinding.FragmentAllRecipeBinding
+import com.ispacegh.babuckman.ispacerecipeapp.model.entities.RecipeData
 import com.ispacegh.babuckman.ispacerecipeapp.utils.FavDishApplication
 import com.ispacegh.babuckman.ispacerecipeapp.viewmodel.FavDishViewModel
 import com.ispacegh.babuckman.ispacerecipeapp.viewmodel.FavDishViewModelFactory
@@ -80,24 +83,29 @@ class AllRecipeFragment : Fragment() {
                 // END
             }
         }
-        /*mFavDishViewModel.allDishesList.observe(viewLifecycleOwner, Observer{
-            if(it.isNotEmpty()){
-                Log.i("ROOMDATA",it.toString())
-            }
-        })*/
+
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.all_recipe_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
+    // TODO Step 2: Create a function to navigate to the Dish Details Fragment.
+    // START
+    /**
+     * A function to navigate to the Dish Details Fragment.
+     *
+     * @param favDish
+     */
+    fun dishDetails(recipeData: RecipeData) {
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.add_dish -> {
-                startActivity(Intent(requireActivity(), AddDishActivity::class.java))
-            }
+        // TODO Step 4: Hide the BottomNavigationView while navigating to the DetailsFragment.
+        // START
+        if (requireActivity() is MainActivity) {
+            (activity as MainActivity?)!!.hideBottomNavigationView()
         }
-        return super.onOptionsItemSelected(item)
+        // END
+
+        findNavController()
+            .navigate(FavoriteFragmentDirections.actionFavoriteFragmentToDishDetailsFragment(recipeData))
     }
+    // END
+
+
 }
